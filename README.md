@@ -1,1 +1,1 @@
-# This is the website for bridge voices club
+# This is the website for bridge of voices club
