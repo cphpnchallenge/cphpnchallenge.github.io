@@ -22,11 +22,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-            <li> <a style= "color: #d7b321;" class="nav-link" href={{url_for('index')}}>Home</a></li>
+            <li> <a style= "color: #000000;" class="nav-link" href={{url_for('index')}}>Home</a></li>
 
             <li class="nav-item dropdown">
-                <a style= "color: #d7b321;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
-                    Notepad
+                <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
+                    Our Mission
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <a style= "color: #d7b321;" class="nav-link" href={{url_for('notes.notes')}}>Upload Photos</a>
@@ -34,8 +34,8 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a style= "color: #d7b321;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
-                    General Information
+                <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
+                    Event Registration
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <a style= "color: #d7b321;" class="nav-link" href={{url_for('calendar')}}>Week At a Glance</a>
@@ -46,13 +46,13 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a style= "color: #d7b321;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
+                <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
                     About Us
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <a style= "color: #d7b321;" class="dropdown-item" href={{url_for('homepages.aboutAllison')}}>Neo</a>
-                    <a style= "color: #d7b321;" class="dropdown-item" href={{url_for('homepages.aboutBria')}}>Derek</a>
-                    <a style= "color: #d7b321;" class="dropdown-item" href={{url_for('homepages.aboutChristina')}}>Hana</a>
+                    <a style= "color: #d7b321;" class="dropdown-item" href={{url_for('homepages.aboutBria')}}>Derrick</a>
+                    <a style= "color: #d7b321;" class="dropdown-item" href={{url_for('homepages.aboutChristina')}}>Hanna</a>
                     <a style= "color: #d7b321;" class="dropdown-item" href="aboutDavid.html">David</a>
                     
                 </div>
@@ -60,7 +60,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a style= "color: #d7b321;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
+                <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
                     Awards
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -69,7 +69,7 @@
                 </div>
             </li>
 
-            <li><a style= "color: #d7b321;" class="nav-link" href={{url_for('signup')}}>Blogs</a></li>
+            <li><a style= "color: #000000;" class="nav-link" href={{url_for('signup')}}>Blogs</a></li>
          
         </ul>
 
@@ -88,8 +88,11 @@
 
 <style>
   body {
-  background-color: LightSkyBlue;
-  background-image: url('https://www.wallpaperbetter.com/wallpaper/289/460/912/dark-mountains-full-moon-1080P-wallpaper.jpg');
+
+  background-image: url('static/img/alex-azabache-BReigPd7XnQ-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
  
 }
     #welcome{
