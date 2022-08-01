@@ -24,14 +24,9 @@
         <ul class="navbar-nav">
             <li> <a style= "color: #000000;" class="nav-link" href="index.html">Home</a></li>
 
-            <li class="nav-item dropdown">
-                <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
-                    Our Mission
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <a style= "color: #d7b321;" class="nav-link" href={{url_for('notes.notes')}}>Upload Photos</a>
-                    <a style= "color: #d7b321;" class="nav-link" href={{url_for('upload.upload')}}>Upload</a>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav">
+                    <li> <a style= "color: #000000;" class="nav-link" href="mission.html">Our Mission</a></li>
             </li>
             <li class="nav-item dropdown">
                 <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
