@@ -1,118 +1,1023 @@
 <!DOCTYPE html>
-<html>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/w3css/3/w3.css">
+<html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Bridge of Voices Club</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge of Voices - Vocal Communication Development for All Kids</title>
+    <meta name="description" content="Inclusive vocal communication development platform for children of all abilities, including neurodiverse learners. Helping every child find their unique voice.">
+    
+    <!-- Accessibility & SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bridgeofvoices.com">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts - Dyslexia friendly options -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Color scheme - WCAG AAA compliant */
+            --primary-blue: #1e40af;
+            --primary-blue-light: #3b82f6;
+            --secondary-green: #059669;
+            --secondary-green-light: #10b981;
+            --accent-orange: #ea580c;
+            --neutral-50: #f9fafb;
+            --neutral-100: #f3f4f6;
+            --neutral-200: #e5e7eb;
+            --neutral-600: #4b5563;
+            --neutral-800: #1f2937;
+            --neutral-900: #111827;
+            
+            /* High contrast mode colors */
+            --hc-bg: #000000;
+            --hc-text: #ffffff;
+            --hc-accent: #ffff00;
+            
+            /* Typography */
+            --font-primary: 'Open Sans', sans-serif;
+            --font-dyslexia: 'Lexend', sans-serif;
+            
+            /* Spacing */
+            --container-max: 1200px;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+        }
+
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--neutral-800);
+            background-color: var(--neutral-50);
+            font-size: 16px;
+        }
+
+        /* Accessibility preferences */
+        .dyslexia-friendly {
+            font-family: var(--font-dyslexia);
+        }
+
+        .high-contrast {
+            background-color: var(--hc-bg) !important;
+            color: var(--hc-text) !important;
+        }
+
+        .high-contrast * {
+            background-color: var(--hc-bg) !important;
+            color: var(--hc-text) !important;
+            border-color: var(--hc-text) !important;
+        }
+
+        .high-contrast .btn-primary {
+            background-color: var(--hc-accent) !important;
+            color: var(--hc-bg) !important;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Skip navigation */
+        .skip-nav {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+        }
+
+        .skip-nav:focus {
+            top: 6px;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--neutral-600);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-blue);
+            background-color: var(--neutral-100);
+        }
+
+        .accessibility-controls {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .btn {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-light);
+        }
+
+        .btn-secondary {
+            background: var(--neutral-200);
+            color: var(--neutral-800);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neutral-300);
+        }
+
+        .btn-large {
+            padding: var(--spacing-md) var(--spacing-xl);
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #dbeafe 0%, #ecfdf5 100%);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--neutral-600);
+            margin-bottom: var(--spacing-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-lg);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        /* Video and Stats Section */
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+            margin-top: var(--spacing-2xl);
+        }
+
+        .video-container {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: var(--neutral-200);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neutral-600);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .video-controls {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+        }
+
+        .stats-container {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-green);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--neutral-600);
+            font-size: 1.1rem;
+        }
+
+        /* Programs Section */
+        .programs-section {
+            padding: var(--spacing-2xl) 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--neutral-800);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .program-card {
+            background: white;
+            border: 2px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: var(--spacing-xl);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .program-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-lg);
+            display: block;
+        }
+
+        .program-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--neutral-800);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .program-description {
+            color: var(--neutral-600);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: var(--spacing-2xl) 0;
+            background: var(--neutral-50);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+        }
+
+        .feature-icon {
+            background: var(--secondary-green-light);
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            color: var(--neutral-800);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-content p {
+            color: var(--neutral-600);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--neutral-800);
+            color: var(--neutral-200);
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section ul li a {
+            color: var(--neutral-200);
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-600);
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .intro-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header, .footer, .video-container {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
 
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav">
-            <li> <a style= "color: #000000;" class="nav-link" href="index.html">Home</a></li>
-
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav">
-                    <li> <a style= "color: #000000;" class="nav-link" href="mission.html">Our Mission</a></li>
-            </li>
-            <li class="nav-item dropdown">
-                <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
-                    Event Registration
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav-container" role="navigation" aria-label="Main navigation">
+                <a href="#" class="logo" aria-label="Bridge of Voices Home">
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                    <span>Bridge of Voices</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <a style= "color: #d7b321;" class="nav-link" href={{url_for('calendar')}}>Week At a Glance</a>
-                    <a style= "color: #d7b321;" class="nav-link" href={{url_for('crud.donate')}}>Donate</a>
-                    <a style= "color: #d7b321;" class="nav-link" href={{url_for('contact')}}>Contact</a>
-                    <a style= "color: #d7b321;" class="nav-link" href={{url_for('roster')}}>Roster</a>
-                </div>
-            </li>
 
-            <li class="nav-item dropdown">
-                <a style= "color: #000000;" class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
-                    About Us
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <a style= "color: #d7b321;" class="dropdown-item" href="Neo.html">Neo</a>
-                    <a style= "color: #d7b321;" class="dropdown-item" href="DerrickHuang.html">Derrick</a>
-                    <a style= "color: #d7b321;" class="dropdown-item" href="HannaZhang.html">Hanna</a>
-                    <a style= "color: #d7b321;" class="dropdown-item" href="DavidXie.html">David</a>
+                <ul class="nav-links">
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#progress">Progress</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+
+                <div class="accessibility-controls">
+                    <button 
+                        class="btn btn-secondary" 
+                        onclick="toggleDyslexiaFont()"
+                        aria-label="Toggle dyslexia-friendly font"
+                        title="Switch to dyslexia-friendly font">
+                        <i class="fas fa-font" aria-hidden="true"></i>
+                    </button>
                     
+                    <button 
+                        class="btn btn-secondary" 
+                        onclick="toggleHighContrast()"
+                        aria-label="Toggle high contrast mode"
+                        title="Switch to high contrast colors">
+                        <i class="fas fa-adjust" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button 
+                        class="btn btn-secondary" 
+                        onclick="increaseFontSize()"
+                        aria-label="Increase font size"
+                        title="Make text larger">
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </button>
+                    
+                    <a href="#login" class="btn btn-primary">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        Login
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">
+                    <i class="fas fa-bridge" aria-hidden="true"></i>
+                    Every Voice Matters.<br>
+                    Every Child Connects.
+                </h1>
+                
+                <p class="subtitle">
+                    Inclusive vocal communication development for children of all abilities. 
+                    Helping neurodiverse learners, including those with autism, find their unique voice 
+                    through adaptive, engaging activities.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#assessment" class="btn btn-primary btn-large">
+                        <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        Start Free Assessment
+                    </a>
+                    
+                    <a href="#programs" class="btn btn-secondary btn-large">
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
+                        Explore Programs
+                    </a>
+                    
+                    <a href="#families" class="btn btn-secondary btn-large">
+                        <i class="fas fa-family" aria-hidden="true"></i>
+                        For Families
+                    </a>
                 </div>
 
-            </li>
+                <!-- Intro Section -->
+                <div class="intro-section">
+                    <div class="video-container">
+                        <div class="video-placeholder">
+                            <div style="text-align: center;">
+                                <i class="fas fa-video" style="font-size: 3rem; color: var(--neutral-400); margin-bottom: 1rem;"></i>
+                                <p><strong>Welcome Video</strong></p>
+                                <p>"Hi! I'm Sam, and I'm excited to help you find your voice!"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="video-controls">
+                            <button class="btn btn-primary" aria-label="Play welcome video">
+                                <i class="fas fa-play" aria-hidden="true"></i>
+                                Play
+                            </button>
+                            
+                            <button class="btn btn-secondary" aria-label="Show video transcript">
+                                <i class="fas fa-closed-captioning" aria-hidden="true"></i>
+                                Captions
+                            </button>
+                            
+                            <button class="btn btn-secondary" aria-label="View ASL interpretation">
+                                <i class="fas fa-hands" aria-hidden="true"></i>
+                                ASL
+                            </button>
+                        </div>
+                    </div>
 
-            <li><a style= "color: #000000;" class="nav-link" href="blogs.html">Blogs</a></li>
-            <li><a style= "color: #000000;" class="nav-link" href="forum.html">Forum</a></li>
-         </ul>
-         <div class="navbar-nav navbar-right">
-            <li><a style= "color: #000000;float:right;" class="nav-link" href="chinese_index.html">[中文]</a></li>
-         </div>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number" aria-label="50,000 plus">50,000+</span>
+                            <span class="stat-label">Children Helped</span>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <span class="stat-number" aria-label="95 percent">95%</span>
+                            <span class="stat-label">Show Communication Improvement</span>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <span class="stat-number" aria-label="25 plus">25+</span>
+                            <span class="stat-label">Languages Supported</span>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <span class="stat-number" aria-label="24/7">24/7</span>
+                            <span class="stat-label">Family Support Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </div>
-</nav>
+        <!-- Programs Section -->
+        <section id="programs" class="programs-section" aria-labelledby="programs-title">
+            <div class="container">
+                <h2 id="programs-title" class="section-title">Choose Your Communication Journey</h2>
+                
+                <p style="text-align: center; font-size: 1.2rem; color: var(--neutral-600); margin-bottom: 2rem;">
+                    Every child communicates differently. Find the path that works for your unique learner.
+                </p>
 
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <i class="program-icon fas fa-comments" style="color: var(--primary-blue);" aria-hidden="true"></i>
+                        <h3 class="program-title">First Words & Sounds</h3>
+                        <p class="program-description">
+                            Building vocabulary, practicing sounds, and celebrating every form of communication. 
+                            Perfect for early learners and pre-verbal children.
+                        </p>
+                        <a href="#first-words" class="btn btn-primary">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Start Here
+                        </a>
+                    </div>
 
-<div style = " margin: 2% 5% 5% 2%; text-align:left;">
-    <div>
-        <h1 style id="welcome">Welcome to Bridge of Voices Club</h1>
-        <p style id="aboutus">To learn about the people who are in this fun club, click “About Us” at the top of the screen. <br>
-            </p>
-        <p style id="training"> We have some activities to help YOU become a better speaker. Have fun! </p>
-    </div>
-</div>
+                    <div class="program-card">
+                        <i class="program-icon fas fa-users" style="color: var(--secondary-green);" aria-hidden="true"></i>
+                        <h3 class="program-title">Social Communication</h3>
+                        <p class="program-description">
+                            Learning to take turns, make friends, and navigate social situations. 
+                            Includes conversation skills and social cue recognition.
+                        </p>
+                        <a href="#social" class="btn btn-primary">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Start Here
+                        </a>
+                    </div>
 
-<style>
-  body {
+                    <div class="program-card">
+                        <i class="program-icon fas fa-star" style="color: var(--accent-orange);" aria-hidden="true"></i>
+                        <h3 class="program-title">Confidence Building</h3>
+                        <p class="program-description">
+                            Speaking up in groups, presentations, and public speaking. 
+                            Building confidence for school and social situations.
+                        </p>
+                        <a href="#confidence" class="btn btn-primary">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Start Here
+                        </a>
+                    </div>
 
-  background-image: url('static/img/bridge.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
- 
-}
-    #welcome{
-        position: relative;
-        left: 100px;
-        font-family: 'Impact';
-        font-size: 40px;
-        font-weight: 900;
-        text-align: left;
-        padding: 30px;
-        color: #ea5f3f;
-    }
-    #aboutus{
-        position: relative;
-        left: 100px;
-        font-family: 'Helvetica';
-        font-size: 20px;
-        font-weight: 200;
-        text-align: left;
-        padding: 20px;
-        color: #000000;
-    }
-    #training{
-        position: relative;
-        left: 100px;
-        font-family: 'Impact';
-        font-size: 25px;
-        font-weight: 200;
-        text-align: left;
-        padding: 20px;
-        color: #000000;
-    }
-</style>
-    </body>
+                    <div class="program-card">
+                        <i class="program-icon fas fa-puzzle-piece" style="color: var(--primary-blue);" aria-hidden="true"></i>
+                        <h3 class="program-title">Autism Support</h3>
+                        <p class="program-description">
+                            Sensory-friendly communication development with visual supports, 
+                            predictable routines, and special interest integration.
+                        </p>
+                        <a href="#autism" class="btn btn-primary">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Learn More
+                        </a>
+                    </div>
+
+                    <div class="program-card">
+                        <i class="program-icon fas fa-volume-mute" style="color: var(--secondary-green);" aria-hidden="true"></i>
+                        <h3 class="program-title">Selective Mutism</h3>
+                        <p class="program-description">
+                            Gradual comfort zone expansion with alternative expression methods 
+                            and anxiety-sensitive approaches to communication.
+                        </p>
+                        <a href="#selective-mutism" class="btn btn-primary">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Learn More
+                        </a>
+                    </div>
+
+                    <div class="program-card">
+                        <i class="program-icon fas fa-globe" style="color: var(--accent-orange);" aria-hidden="true"></i>
+                        <h3 class="program-title">Multilingual Learners</h3>
+                        <p class="program-description">
+                            Code-switching practice, cultural communication styles, 
+                            and building confidence in multiple languages.
+                        </p>
+                        <a href="#multilingual" class="btn btn-primary">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title" class="section-title">Why Families Choose Bridge of Voices</h2>
+
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Truly Accessible</h3>
+                            <p>Built from the ground up with accessibility in mind. High contrast modes, dyslexia-friendly fonts, screen reader support, and multiple ways to interact.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>AI-Powered Patience</h3>
+                            <p>Our AI coach understands processing differences and waits for each child's unique pace. No rushing, no pressure, just patient support.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-family" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Family-Centered</h3>
+                            <p>Parents and siblings are part of the journey. Get practice suggestions, progress updates, and ways to support communication at home.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Professional Integration</h3>
+                            <p>Works seamlessly with speech therapists, teachers, and other professionals. Share progress and align goals across your child's support team.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Privacy & Safety First</h3>
+                            <p>COPPA compliant with end-to-end encryption. Your child's data and voice recordings are protected with the highest security standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Celebrating Differences</h3>
+                            <p>Every form of communication is valued. Whether verbal, visual, or gestural - we celebrate each child's unique way of connecting with the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Ready to Help Your Child Find Their Voice?</h2>
+                <p>Join thousands of families who've discovered the joy of confident communication.</p>
+                
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#start-free" class="btn btn-large" style="background: white; color: var(--primary-blue);">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                        Start Free Trial
+                    </a>
+                    
+                    <a href="#schedule-demo" class="btn btn-large" style="background: transparent; color: white; border: 2px solid white;">
+                        <i class="fas fa-calendar" aria-hidden="true"></i>
+                        Schedule Demo
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="#first-words">First Words & Sounds</a></li>
+                        <li><a href="#social">Social Communication</a></li>
+                        <li><a href="#autism">Autism Support</a></li>
+                        <li><a href="#selective-mutism">Selective Mutism</a></li>
+                        <li><a href="#multilingual">Multilingual Learners</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#research">Research & Evidence</a></li>
+                        <li><a href="#blog">Blog & Tips</a></li>
+                        <li><a href="#downloads">Free Downloads</a></li>
+                        <li><a href="#webinars">Parent Webinars</a></li>
+                        <li><a href="#community">Community Forum</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                        <li><a href="#facebook" aria-label="Follow us on Facebook">Facebook</a></li>
+                        <li><a href="#twitter" aria-label="Follow us on Twitter">Twitter</a></li>
+                        <li><a href="#youtube" aria-label="Subscribe to our YouTube channel">YouTube</a></li>
+                        <li><a href="#professionals">For Professionals</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bridge of Voices. All rights reserved. | Empowering every child's communication journey.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Accessibility Features -->
+    <script>
+        // Font size control
+        let currentFontSize = 16;
+        
+        function increaseFontSize() {
+            currentFontSize += 2;
+            if (currentFontSize > 24) currentFontSize = 16;
+            document.documentElement.style.fontSize = currentFontSize + 'px';
+            
+            // Announce to screen readers
+            announceToScreenReader(`Font size changed to ${currentFontSize} pixels`);
+        }
+
+        // Dyslexia-friendly font toggle
+        function toggleDyslexiaFont() {
+            document.body.classList.toggle('dyslexia-friendly');
+            const isActive = document.body.classList.contains('dyslexia-friendly');
+            announceToScreenReader(isActive ? 'Dyslexia-friendly font enabled' : 'Dyslexia-friendly font disabled');
+        }
+
+        // High contrast toggle
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            const isActive = document.body.classList.contains('high-contrast');
+            announceToScreenReader(isActive ? 'High contrast mode enabled' : 'High contrast mode disabled');
+        }
+
+        // Screen reader announcements
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            announcement.className = 'sr-only';
+            announcement.style.position = 'absolute';
+            announcement.style.left = '-10000px';
+            announcement.style.width = '1px';
+            announcement.style.height = '1px';
+            announcement.style.overflow = 'hidden';
+            
+            document.body.appendChild(announcement);
+            announcement.textContent = message;
+            
+            setTimeout(() => {
+                document.body.removeChild(announcement);
+            }, 1000);
+        }
+
+        // Keyboard navigation enhancements
+        document.addEventListener('keydown', function(e) {
+            // Escape key to close any open modals/menus
+            if (e.key === 'Escape') {
+                // Close any open elements
+                console.log('Escape pressed - closing modals');
+            }
+            
+            // Alt + 1 for main content
+            if (e.altKey && e.key === '1') {
+                e.preventDefault();
+                document.getElementById('main-content').focus();
+                announceToScreenReader('Jumped to main content');
+            }
+        });
+
+        // Save accessibility preferences
+        function saveAccessibilityPreferences() {
+            const preferences = {
+                fontSize: currentFontSize,
+                dyslexiaFont: document.body.classList.contains('dyslexia-friendly'),
+                highContrast: document.body.classList.contains('high-contrast')
+            };
+            localStorage.setItem('bridgeOfVoicesAccessibility', JSON.stringify(preferences));
+        }
+
+        // Load accessibility preferences
+        function loadAccessibilityPreferences() {
+            const saved = localStorage.getItem('bridgeOfVoicesAccessibility');
+            if (saved) {
+                const preferences = JSON.parse(saved);
+                
+                if (preferences.fontSize) {
+                    currentFontSize = preferences.fontSize;
+                    document.documentElement.style.fontSize = currentFontSize + 'px';
+                }
+                
+                if (preferences.dyslexiaFont) {
+                    document.body.classList.add('dyslexia-friendly');
+                }
+                
+                if (preferences.highContrast) {
+                    document.body.classList.add('high-contrast');
+                }
+            }
+        }
+
+        // Initialize accessibility preferences on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAccessibilityPreferences();
+            
+            // Save preferences whenever they change
+            const observer = new MutationObserver(saveAccessibilityPreferences);
+            observer.observe(document.body, {
+                attributes: true,
+                attributeFilter: ['class']
+            });
+        });
+
+        // Focus management for better keyboard navigation
+        document.addEventListener('focusin', function(e) {
+            // Ensure focused elements are visible
+            if (e.target.scrollIntoViewIfNeeded) {
+                e.target.scrollIntoViewIfNeeded();
+            } else {
+                e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    </script>
+
+    <!-- Service Worker for PWA functionality (optional) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('ServiceWorker registration successful');
+                })
+                .catch(function(err) {
+                    console.log('ServiceWorker registration failed');
+                });
+            });
+        }
+    </script>
+</body>
 </html>
